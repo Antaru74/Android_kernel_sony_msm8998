@@ -37,7 +37,7 @@ jobs:
       run: |
         make CC="${CLANG_PATH}/clang --target=aarch64-linux-gnu" O=out ARCH=arm64 \
         CROSS_COMPILE=${CROSS_COMPILE} CROSS_COMPILE_ARM32=${CROSS_COMPILE_ARM32} \
-        lineage-msm8998-yoshino-poplar_dsds_defconfig
+        lineage-msm8998-yoshino-poplar_kddi_defconfig
         make CC="${CLANG_PATH}/clang --target=aarch64-linux-gnu" O=out ARCH=arm64 \
         CROSS_COMPILE=${CROSS_COMPILE} CROSS_COMPILE_ARM32=${CROSS_COMPILE_ARM32} \
         -j$(nproc --all) AR=llvm-ar NM=llvm-nm OBJCOPY=aarch64-linux-gnu-objcopy \
@@ -156,4 +156,4 @@ jobs:
 
     - name: Upload kernel artifacts to Telegram
       run: |
-        ./kirimtele.sh file "out/arch/arm64/boot/Image.gz-dtb" "test build doang"
+        ./kirimtele.sh file "out/arch/arm64/boot/Image.gz-dtb" "test add fiops"
