@@ -57,6 +57,9 @@ choice
 	  Select the I/O scheduler which will be used by default for all
 	  block devices.
 
+        config DEFAULT_FIOPS
+		bool "FIOPS" if IOSCHED_FIOPS=y
+
 	config DEFAULT_DEADLINE
 		bool "Deadline" if IOSCHED_DEADLINE=y
 
